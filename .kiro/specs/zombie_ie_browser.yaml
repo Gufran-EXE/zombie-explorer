@@ -1,0 +1,232 @@
+project:
+  name: Internet Explorer 6 - Zombie Edition
+  category: Resurrection
+  event: Halloween Hackathon
+  description: Horror parody web browser resurrecting IE6 as undead haunted application
+  tech_stack:
+    - React
+    - Vite
+    - TypeScript
+    - Tailwind CSS
+    - OpenAI API
+    - MCP (Model Context Protocol)
+
+personas:
+  - name: Nostalgic Developer
+    goal: Experience IE6 horror for entertainment
+    pain_points:
+      - Modern browsers too reliable
+      - Missing retro chaos
+  - name: Hackathon Judge
+    goal: Evaluate creative resurrection concept
+    needs:
+      - Clear demo flow
+      - Deep Kiro feature integration
+      - Technical innovation
+
+flows:
+  - name: First Launch Experience
+    steps:
+      - User opens zombie IE6 browser
+      - Haunted splash screen with glitchy IE logo
+      - Slow animated loading bar
+      - Browser window opens with cursed UI
+  - name: Browse Haunted Site
+    steps:
+      - User enters URL or clicks cursed bookmark
+      - Intentionally slow page load with retro progress bar
+      - Page renders with 2000s styling and ghost effects
+      - Random pop-up errors appear
+      - Ghost cursor follows real cursor
+  - name: Bug Exorcist AI Flow
+    steps:
+      - User encounters "bug" or error
+      - Opens Bug Exorcist panel
+      - AI analyzes issue via MCP + OpenAI
+      - Provides spooky "fix" with horror-themed explanation
+      - Bug transforms into feature
+
+features:
+  - name: Zombie Browser Shell
+    priority: critical
+    description: Main browser window with IE6 aesthetic
+    details:
+      - Retro window chrome with XP-style buttons
+      - Address bar with slow typing animation
+      - Status bar with creepy messages
+      - Favorites/bookmarks sidebar
+  - name: Intentional Slowness
+    priority: critical
+    description: Artificially delayed operations
+    details:
+      - Page load delays (2-5 seconds)
+      - Typing lag in address bar
+      - Button click delays
+      - Progress bars that stutter
+  - name: Cursed Visual Effects
+    priority: high
+    description: Haunted UI elements
+    details:
+      - Ghost cursor trail
+      - Screen glitches and artifacts
+      - Flickering elements
+      - Blood drip animations
+      - Floating ghost sprites
+  - name: Retro Page Styling
+    priority: high
+    description: Force 2000s web design on content
+    details:
+      - Comic Sans and Papyrus fonts
+      - Marquee scrolling text
+      - Animated GIFs
+      - Table-based layouts
+      - Garish color schemes
+  - name: Cursed Bookmarks
+    priority: high
+    description: Prebuilt haunted pages
+    details:
+      - Zombie social network
+      - Haunted search engine
+      - Cursed email client
+      - Undead shopping site
+      - Ghost chat room
+  - name: Pop-up Error Dialogs
+    priority: medium
+    description: Retro Windows XP error messages
+    details:
+      - Random error appearances
+      - Spooky error messages
+      - Fake system warnings
+      - Draggable dialog boxes
+      - Classic OK/Cancel buttons
+  - name: Bug Exorcist AI Panel
+    priority: critical
+    description: MCP + OpenAI powered debugging assistant
+    details:
+      - Side panel interface
+      - Bug description input
+      - AI analysis with spooky personality
+      - Horror-themed solutions
+      - Code snippet suggestions
+      - Exorcism animation on fix
+  - name: Compatibility Mode from Hell
+    priority: medium
+    description: Toggle that makes everything more cursed
+    details:
+      - Increases visual glitches
+      - More aggressive slowness
+      - Additional pop-ups
+      - Inverted colors option
+      - Zalgo text mode
+
+non_functional_requirements:
+  - performance: Must run smoothly despite intentional slowness
+  - compatibility: Works in modern browsers (Chrome, Firefox, Safari)
+  - responsiveness: Desktop-focused but mobile-aware
+  - accessibility: Cursed but still usable
+  - demo_readiness: Quick setup and clear user flow
+
+folder_structure:
+  - path: .kiro/specs
+    purpose: Feature specifications
+  - path: .kiro/steering
+    purpose: Project standards and context
+  - path: .kiro/hooks
+    purpose: Automated workflows
+  - path: .kiro/settings
+    purpose: MCP configuration
+  - path: src/components
+    purpose: React components
+  - path: src/pages
+    purpose: Haunted page templates
+  - path: src/effects
+    purpose: Visual effect utilities
+  - path: src/ai
+    purpose: Bug Exorcist AI logic
+  - path: src/assets
+    purpose: Images, fonts, sounds
+  - path: public
+    purpose: Static assets
+
+components:
+  - name: BrowserChrome
+    purpose: Main IE6 window frame
+  - name: AddressBar
+    purpose: URL input with slow typing
+  - name: StatusBar
+    purpose: Bottom status with creepy messages
+  - name: BookmarksSidebar
+    purpose: Cursed bookmarks list
+  - name: PageRenderer
+    purpose: Content area with retro styling
+  - name: GhostCursor
+    purpose: Trailing ghost cursor effect
+  - name: PopupError
+    purpose: Retro error dialog
+  - name: BugExorcistPanel
+    purpose: AI debugging assistant
+  - name: LoadingBar
+    purpose: Slow progress indicator
+  - name: CompatibilityToggle
+    purpose: Hell mode switch
+
+haunted_sites:
+  - name: ZombieBook
+    url: zombiebook.hell
+    theme: Undead social network
+  - name: BooHoo Search
+    url: boohoo.search
+    theme: Haunted search engine
+  - name: DeadMail
+    url: deadmail.tomb
+    theme: Cursed email client
+  - name: GhostBay
+    url: ghostbay.haunt
+    theme: Undead marketplace
+  - name: Scream Chat
+    url: scream.chat
+    theme: Ghost chat room
+
+kiro_features:
+  specs:
+    - Main project spec (this file)
+    - Individual feature specs for complex components
+  steering:
+    - Project coding standards
+    - Horror theme guidelines
+    - AI personality rules
+    - Retro design patterns
+  hooks:
+    - Auto-update haunted sites on save
+    - Run tests on component changes
+    - Generate cursed content
+  mcp:
+    - OpenAI integration for Bug Exorcist
+    - Custom MCP tools for horror effects
+    - AI personality configuration
+
+success_metrics:
+  - Judges laugh at intentional bugs
+  - Demo completes without real crashes
+  - All Kiro features deeply integrated
+  - Bug Exorcist provides entertaining responses
+  - Retro aesthetic is authentic
+  - Cursed effects are visible and fun
+
+out_of_scope:
+  - Real web browsing capability
+  - Actual IE6 engine integration
+  - Multi-tab support
+  - Browser extensions
+  - Real security features
+  - Mobile app version
+
+future_enhancements:
+  - Multiplayer haunted browsing
+  - User-generated cursed pages
+  - More AI personalities
+  - Sound effects and music
+  - Achievement system
+  - Zombie browser history that haunts you
+  - Cursed developer tools
+  - Plugin system for community effects

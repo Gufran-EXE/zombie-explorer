@@ -1,0 +1,347 @@
+/* Zombie Chat Styles - Retro MSN/AIM aesthetic */
+
+/* Floating Toggle Button */
+.zombie-chat-toggle {
+  position: fixed;
+  bottom: 80px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4B0082 0%, #8B0000 100%);
+  border: 3px solid #00FF00;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(139, 0, 0, 0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  z-index: 9500;
+  transition: all 0.3s ease;
+  animation: floatPulse 3s ease-in-out infinite;
+}
+
+.zombie-chat-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6), 0 0 30px rgba(139, 0, 0, 0.6);
+  animation: floatPulse 3s ease-in-out infinite, glitchShake 0.3s infinite;
+}
+
+.zombie-chat-toggle.has-unread {
+  animation: floatPulse 3s ease-in-out infinite, urgentPulse 1s infinite;
+}
+
+@keyframes floatPulse {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes urgentPulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 0, 0, 1);
+  }
+}
+
+@keyframes glitchShake {
+  0%, 100% { transform: translate(0, 0) scale(1.1); }
+  25% { transform: translate(-2px, 2px) scale(1.1); }
+  50% { transform: translate(2px, -2px) scale(1.1); }
+  75% { transform: translate(-2px, -2px) scale(1.1); }
+}
+
+/* Chat Window */
+.zombie-chat-window {
+  position: fixed;
+  right: -400px;
+  top: 0;
+  width: 380px;
+  height: 100vh;
+  background: linear-gradient(180deg, #ECE9D8 0%, #D4D0C8 100%);
+  border-left: 3px solid #8B0000;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.6);
+  transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 9400;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Tahoma', 'Arial', sans-serif;
+}
+
+.zombie-chat-window.open {
+  right: 0;
+}
+
+/* Title Bar */
+.zombie-chat-title-bar {
+  background: linear-gradient(180deg, #4B0082 0%, #2F004F 100%);
+  color: white;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #8B0000;
+  cursor: move;
+}
+
+.zombie-chat-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.zombie-chat-status {
+  font-size: 10px;
+  color: #00FF00;
+  font-weight: normal;
+}
+
+.zombie-chat-close {
+  background: linear-gradient(180deg, #ECE9D8 0%, #D4D0C8 100%);
+  border: 2px outset #FFFFFF;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  font-weight: bold;
+}
+
+.zombie-chat-close:hover {
+  background: linear-gradient(180deg, #FF6B6B 0%, #CC0000 100%);
+  color: white;
+}
+
+.zombie-chat-close:active {
+  border-style: inset;
+}
+
+/* Messages Area */
+.zombie-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.zombie-chat-messages::-webkit-scrollbar {
+  width: 16px;
+}
+
+.zombie-chat-messages::-webkit-scrollbar-track {
+  background: #D4D0C8;
+  border: 1px inset #808080;
+}
+
+.zombie-chat-messages::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ECE9D8 0%, #D4D0C8 100%);
+  border: 2px outset #FFFFFF;
+}
+
+/* Message Bubbles */
+.zombie-message {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  animation: messageSlideIn 0.3s ease-out;
+}
+
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.zombie-message.user {
+  align-self: flex-end;
+}
+
+.zombie-message.zombie {
+  align-self: flex-start;
+}
+
+.message-bubble {
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.zombie-message.user .message-bubble {
+  background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
+  color: white;
+  border: 2px outset #0066FF;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.zombie-message.zombie .message-bubble {
+  background: linear-gradient(135deg, #8B0000 0%, #660000 100%);
+  color: #FFFFFF;
+  border: 2px outset #8B0000;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: zombieMessageGlow 2s infinite;
+}
+
+@keyframes zombieMessageGlow {
+  0%, 100% {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 5px rgba(139, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 0, 0, 0.5);
+  }
+}
+
+.message-bubble.glitch-medium {
+  animation: zombieMessageGlow 2s infinite, textGlitch 0.1s infinite;
+}
+
+@keyframes textGlitch {
+  0%, 100% {
+    text-shadow: 0 0 2px rgba(255, 0, 0, 0.5);
+  }
+  50% {
+    text-shadow: -2px 0 2px rgba(255, 0, 0, 0.8), 2px 0 2px rgba(0, 255, 0, 0.8);
+  }
+}
+
+.message-timestamp {
+  font-size: 9px;
+  color: #999999;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* Typing Indicator */
+.zombie-typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(139, 0, 0, 0.1);
+  border-radius: 12px;
+  max-width: 80px;
+  align-self: flex-start;
+}
+
+.typing-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8B0000;
+  animation: typingBounce 1.4s infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingBounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Input Area */
+.zombie-chat-input-area {
+  padding: 12px;
+  background: linear-gradient(180deg, #ECE9D8 0%, #D4D0C8 100%);
+  border-top: 2px solid #8B0000;
+  display: flex;
+  gap: 8px;
+}
+
+.zombie-chat-input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 2px inset #808080;
+  background: white;
+  font-size: 12px;
+  font-family: 'Arial', sans-serif;
+  resize: none;
+  min-height: 36px;
+  max-height: 80px;
+}
+
+.zombie-chat-input:focus {
+  outline: 2px solid #4B0082;
+  outline-offset: -2px;
+}
+
+.zombie-chat-send {
+  background: linear-gradient(180deg, #4B0082 0%, #2F004F 100%);
+  border: 2px outset #8B0000;
+  color: white;
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.zombie-chat-send:hover:not(:disabled) {
+  background: linear-gradient(180deg, #6A0DAD 0%, #4B0082 100%);
+}
+
+.zombie-chat-send:active {
+  border-style: inset;
+}
+
+.zombie-chat-send:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Welcome Message */
+.zombie-welcome {
+  text-align: center;
+  padding: 20px;
+  color: #666666;
+  font-size: 11px;
+}
+
+.zombie-welcome-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+  animation: welcomeFloat 3s ease-in-out infinite;
+}
+
+@keyframes welcomeFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}

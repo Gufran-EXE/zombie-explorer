@@ -1,0 +1,13 @@
+{
+  "name": "Layout Retro Review",
+  "description": "Guards against modern layout patterns and enforces early 2000s table-based, boxy, retro chrome aesthetics",
+  "trigger": {
+    "event": "file_saved",
+    "filePattern": "src/{pages,components}/**/*.{tsx,jsx,css}"
+  },
+  "action": {
+    "type": "agent_message",
+    "message": "📟 RETRO LAYOUT GUARDIAN ACTIVATED 📟\n\nA layout or page component was modified. Verify it maintains early 2000s authenticity:\n\n✓ Layout Structure:\n  - Table-based layouts with nested tables (not flexbox/grid unless subtle)\n  - Boxy, rigid containers (no smooth rounded corners everywhere)\n  - Frames and iframes where appropriate\n  - Fixed widths, not fluid responsive design\n\n✓ IE6 Chrome Elements:\n  - Blue title bars with XP-style controls\n  - Gray beveled toolbars\n  - Retro navigation buttons (back/forward arrows)\n  - Classic IE6 blue \"e\" logo with orbital ring\n\n✓ 2000s Web Vibes:\n  - Gradient backgrounds (garish, not subtle)\n  - Marquee scrolling text\n  - Visitor counters with retro digit graphics\n  - \"Best viewed in 800x600\" badges\n  - Guestbook aesthetics\n\n❌ AVOID:\n  - Modern minimalist design\n  - Clean, professional layouts\n  - Contemporary spacing and typography\n  - Mobile-first responsive patterns\n\nIf the layout feels too modern, suggest specific retro adjustments per zombie_ie_mode.md."
+  },
+  "enabled": true
+}

@@ -1,0 +1,150 @@
+/* Retro Popup Dialog Styles */
+
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+.retro-dialog {
+  position: fixed;
+  width: 400px;
+  background: #ECE9D8;
+  border: 3px solid #0054E3;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
+  font-family: 'Tahoma', 'Arial', sans-serif;
+}
+
+.retro-dialog.dragging {
+  cursor: move;
+  opacity: 0.9;
+}
+
+.dialog-title-bar {
+  background: linear-gradient(180deg, #0997FF 0%, #0053EE 50%, #0050E6 100%);
+  color: white;
+  padding: 4px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+  user-select: none;
+}
+
+.dialog-title {
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dialog-close {
+  width: 21px;
+  height: 21px;
+  background: linear-gradient(180deg, #ECE9D8 0%, #D4D0C8 100%);
+  border: 1px outset #FFFFFF;
+  font-size: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  font-weight: bold;
+}
+
+.dialog-close:hover {
+  background: linear-gradient(180deg, #FF6B6B 0%, #CC0000 100%);
+  color: white;
+}
+
+.dialog-close:active {
+  border-style: inset;
+}
+
+.dialog-content {
+  padding: 20px;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  background: #ECE9D8;
+  min-height: 80px;
+}
+
+.dialog-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+  animation: iconPulse 2s infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.dialog-message {
+  font-size: 12px;
+  color: #000000;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.dialog-buttons {
+  padding: 10px 20px 15px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  background: #ECE9D8;
+  border-top: 1px solid #FFFFFF;
+}
+
+.dialog-button {
+  background: linear-gradient(180deg, #ECE9D8 0%, #D4D0C8 100%);
+  border: 2px outset #FFFFFF;
+  padding: 4px 20px;
+  font-size: 11px;
+  font-family: 'Tahoma', sans-serif;
+  cursor: pointer;
+  min-width: 75px;
+  color: #000000;
+}
+
+.dialog-button:hover {
+  background: linear-gradient(180deg, #F5F5F5 0%, #E0E0E0 100%);
+}
+
+.dialog-button:active {
+  border-style: inset;
+  background: linear-gradient(180deg, #D4D0C8 0%, #ECE9D8 100%);
+}
+
+.dialog-button:focus {
+  outline: 1px dotted #000000;
+  outline-offset: -4px;
+}
+
+/* Animation for popup appearance */
+.retro-dialog {
+  animation: popupAppear 0.2s ease-out;
+}
+
+@keyframes popupAppear {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

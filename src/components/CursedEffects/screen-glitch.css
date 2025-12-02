@@ -1,0 +1,70 @@
+/* Screen Glitch Effects for Hell Mode */
+
+.screen-glitch-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 8000;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.screen-glitch-overlay.active {
+  opacity: 1;
+}
+
+.glitch-scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  animation: scanlineMove 0.5s linear infinite;
+}
+
+@keyframes scanlineMove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}
+
+.glitch-rgb-shift {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.1) 0%,
+    transparent 20%,
+    transparent 80%,
+    rgba(0, 0, 255, 0.1) 100%
+  );
+  animation: rgbShift 0.2s steps(2) infinite;
+}
+
+@keyframes rgbShift {
+  0% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(-2px);
+  }
+}

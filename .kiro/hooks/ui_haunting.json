@@ -1,0 +1,13 @@
+{
+  "name": "UI Haunting Enforcer",
+  "description": "Ensures new UI components embrace the cursed IE6 aesthetic with spooky microcopy, glitch effects, and retro visuals",
+  "trigger": {
+    "event": "file_saved",
+    "filePattern": "src/components/**/*.{tsx,jsx}"
+  },
+  "action": {
+    "type": "agent_message",
+    "message": "🧟 ZOMBIE IE6 UI HAUNTING CHECK 🧟\n\nA UI component was just saved. Review it to ensure:\n\n✓ Spooky Microcopy:\n  - Button labels use cursed language (\"Exorcise Bug\", \"Haunt This Page\")\n  - Tooltips have horror flavor (\"Click if you dare\")\n  - Status messages feel undead (\"Summoning from the depths...\")\n\n✓ Visual Cursed Effects:\n  - Ghost cursor trails where appropriate\n  - Subtle glitches or flickers (1-2 second intervals)\n  - Retro IE6 styling (blue bars, gray toolbars, beveled buttons)\n  - No modern UI patterns (Material, Fluent, etc.)\n\n✓ Retro Authenticity:\n  - Pixelated or low-res assets\n  - Comic Sans, Papyrus, or other cursed fonts\n  - XP-style window controls and chrome\n  - 2000s web vibes\n\nIf the component needs haunting, suggest specific cursed improvements that align with the zombie_ie_mode.md steering guide."
+  },
+  "enabled": true
+}

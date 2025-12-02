@@ -1,0 +1,75 @@
+/* Ghost Cursor Effects */
+
+.ghost-cursor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.ghost-cursor {
+  position: fixed;
+  pointer-events: none;
+  user-select: none;
+  font-size: 20px;
+  transform: translate(-50%, -50%);
+  transition: left 0.15s ease-out, top 0.15s ease-out;
+  will-change: transform, left, top;
+}
+
+.ghost-cursor.main {
+  opacity: 0.7;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.8));
+  z-index: 10000;
+}
+
+.ghost-cursor.main.hell-mode {
+  opacity: 0.9;
+  filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.8));
+  animation: ghostJitter 0.1s infinite;
+  font-size: 24px;
+}
+
+.ghost-cursor.trail {
+  opacity: 0.4;
+  filter: blur(1px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  z-index: 9999;
+}
+
+@keyframes ghostJitter {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  25% {
+    transform: translate(-52%, -48%) rotate(-2deg);
+  }
+  50% {
+    transform: translate(-48%, -52%) rotate(2deg);
+  }
+  75% {
+    transform: translate(-52%, -52%) rotate(-1deg);
+  }
+}
+
+/* Subtle floating animation for main ghost */
+.ghost-cursor.main {
+  animation: ghostFloat 2s ease-in-out infinite;
+}
+
+@keyframes ghostFloat {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-3px);
+  }
+}
+
+.ghost-cursor.main.hell-mode {
+  animation: ghostFloat 2s ease-in-out infinite, ghostJitter 0.1s infinite;
+}

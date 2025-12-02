@@ -1,0 +1,971 @@
+/* Zombie IE6 Browser - Retro Styling */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Tahoma', 'Arial', sans-serif;
+  background: #008080;
+  overflow: hidden;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Main Browser Window */
+.zombie-browser {
+  width: 1024px;
+  height: 768px;
+  background: #ECE9D8;
+  border: 3px solid #0054E3;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title Bar */
+.title-bar {
+  background: linear-gradient(180deg, #0997FF 0%, #0053EE 50%, #0050E6 100%);
+  color: white;
+  padding: 4px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.title-bar-text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.title-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.title-bar-controls {
+  display: flex;
+  gap: 2px;
+}
+
+.title-button {
+  width: 21px;
+  height: 21px;
+  background: linear-gradient(180deg, #ECE9D8 0%, #D4D0C8 100%);
+  border: 1px outset #FFFFFF;
+  font-size: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-button:active {
+  border-style: inset;
+}
+
+.title-button.close {
+  background: linear-gradient(180deg, #FF6B6B 0%, #CC0000 100%);
+  color: white;
+  font-weight: bold;
+}
+
+/* Menu Bar */
+.menu-bar {
+  background: #ECE9D8;
+  padding: 3px 6px;
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid #FFFFFF;
+  font-size: 11px;
+}
+
+.menu-item {
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: #316AC5;
+  color: white;
+}
+
+/* Toolbar */
+.toolbar {
+  background: linear-gradient(180deg, #ECE9D8 0%, #D4D0C8 100%);
+  padding: 4px 6px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.toolbar-button {
+  background: linear-gradient(180deg, #ECE9D8 0%, #D4D0C8 100%);
+  border: 2px outset #FFFFFF;
+  padding: 4px 8px;
+  font-size: 11px;
+  cursor: pointer;
+  font-family: 'Tahoma', sans-serif;
+}
+
+.toolbar-button:active {
+  border-style: inset;
+}
+
+.toolbar-separator {
+  width: 1px;
+  height: 20px;
+  background: #808080;
+  margin: 0 4px;
+}
+
+.compatibility-toggle {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.hell-mode-label {
+  color: #8B0000;
+  font-weight: bold;
+}
+
+/* Address Bar */
+.address-bar {
+  background: #ECE9D8;
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.address-label {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.address-form {
+  flex: 1;
+  display: flex;
+  gap: 4px;
+}
+
+.address-input {
+  flex: 1;
+  padding: 3px 6px;
+  border: 2px inset #FFFFFF;
+  background: white;
+  font-size: 11px;
+  font-family: 'Arial', sans-serif;
+}
+
+.go-button {
+  background: linear-gradient(180deg, #ECE9D8 0%, #D4D0C8 100%);
+  border: 2px outset #FFFFFF;
+  padding: 2px 12px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.go-button:active {
+  border-style: inset;
+}
+
+/* Loading Bar */
+.loading-bar-container {
+  background: #ECE9D8;
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.loading-bar {
+  flex: 1;
+  height: 18px;
+  border: 2px inset #FFFFFF;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0054E3 0%, #3399FF 50%, #0054E3 100%);
+  transition: width 0.3s ease;
+  position: relative;
+}
+
+.loading-bar-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%);
+}
+
+.loading-text {
+  font-size: 11px;
+  color: #8B0000;
+  white-space: nowrap;
+}
+
+/* Content Area */
+.content-area {
+  flex: 1;
+  background: white;
+  overflow: auto;
+  border: 2px inset #808080;
+}
+
+.page-container {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.blank-page {
+  text-align: center;
+  padding: 40px;
+}
+
+.web-page {
+  padding: 20px;
+}
+
+.web-page.hell-mode {
+  animation: glitch 0.3s infinite;
+  filter: hue-rotate(180deg);
+}
+
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  25% { transform: translate(-2px, 2px); }
+  50% { transform: translate(2px, -2px); }
+  75% { transform: translate(-2px, -2px); }
+}
+
+/* Status Bar */
+.status-bar {
+  background: linear-gradient(180deg, #ECE9D8 0%, #D4D0C8 100%);
+  padding: 3px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #FFFFFF;
+  font-size: 11px;
+}
+
+.status-section {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-icon {
+  font-size: 14px;
+}
+
+.status-text {
+  color: #000000;
+}
+
+.hell-indicator {
+  color: #8B0000;
+  font-weight: bold;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.zone-text {
+  padding: 2px 8px;
+  border: 1px inset #808080;
+  background: white;
+}
+
+/* Retro Table Styling */
+table {
+  border-collapse: separate;
+  border-spacing: 2px;
+}
+
+marquee {
+  padding: 10px;
+  font-weight: bold;
+}
+
+center {
+  display: block;
+  text-align: center;
+}
+
+
+/* Retro Page Styles */
+.retro-page {
+  min-height: 100%;
+  padding: 10px;
+  font-family: 'Arial', sans-serif;
+}
+
+.retro-page a {
+  color: #0000EE;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.retro-page a:visited {
+  color: #551A8B;
+}
+
+.retro-page a:hover {
+  color: #FF0000;
+}
+
+/* Hell Mode Enhancements */
+.hell-mode {
+  animation: hellGlitch 0.5s infinite;
+}
+
+@keyframes hellGlitch {
+  0%, 100% { 
+    transform: translate(0); 
+    filter: hue-rotate(0deg);
+  }
+  10% { 
+    transform: translate(-3px, 3px); 
+    filter: hue-rotate(90deg);
+  }
+  20% { 
+    transform: translate(3px, -3px); 
+    filter: hue-rotate(180deg);
+  }
+  30% { 
+    transform: translate(-3px, -3px); 
+    filter: hue-rotate(270deg);
+  }
+  40% { 
+    transform: translate(3px, 3px); 
+    filter: hue-rotate(360deg);
+  }
+  50% { 
+    transform: translate(0); 
+    filter: invert(1);
+  }
+}
+
+/* Blank Page Styling */
+.blank-page {
+  padding: 40px;
+  text-align: center;
+}
+
+.blank-page h1 {
+  margin-bottom: 20px;
+}
+
+/* Retro Form Elements */
+input[type="text"],
+input[type="submit"],
+button {
+  font-family: 'Arial', 'Tahoma', sans-serif;
+}
+
+/* Marquee Styling (for browsers that still support it) */
+marquee {
+  display: block;
+  padding: 5px;
+}
+
+
+/* Bookmarks Bar */
+.bookmarks-bar {
+  background: linear-gradient(180deg, #ECE9D8 0%, #D4D0C8 100%);
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #FFFFFF;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.bookmarks-label {
+  font-size: 11px;
+  font-weight: bold;
+  color: #000000;
+  white-space: nowrap;
+  padding-right: 4px;
+  border-right: 1px solid #808080;
+}
+
+.bookmarks-list {
+  display: flex;
+  gap: 2px;
+  flex-wrap: nowrap;
+}
+
+.bookmark-item {
+  background: linear-gradient(180deg, #ECE9D8 0%, #D4D0C8 100%);
+  border: 2px outset #FFFFFF;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-family: 'Tahoma', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  transition: all 0.1s ease;
+  color: #000000;
+}
+
+.bookmark-item:hover {
+  background: linear-gradient(180deg, #FFCCCC 0%, #FF9999 100%);
+  animation: bookmarkShake 0.2s infinite, bookmarkFlicker 0.3s infinite;
+  color: #8B0000;
+  border-color: #FF0000;
+}
+
+.bookmark-item:active {
+  border-style: inset;
+  background: linear-gradient(180deg, #D4D0C8 0%, #ECE9D8 100%);
+}
+
+.bookmark-icon {
+  font-size: 12px;
+  display: inline-block;
+}
+
+.bookmark-name {
+  font-size: 11px;
+}
+
+@keyframes bookmarkShake {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-1px, 1px) rotate(-1deg);
+  }
+  50% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  75% {
+    transform: translate(-1px, -1px) rotate(-0.5deg);
+  }
+}
+
+@keyframes bookmarkFlicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+/* Scrollbar styling for bookmarks bar */
+.bookmarks-bar::-webkit-scrollbar {
+  height: 12px;
+}
+
+.bookmarks-bar::-webkit-scrollbar-track {
+  background: #D4D0C8;
+  border: 1px inset #808080;
+}
+
+.bookmarks-bar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ECE9D8 0%, #D4D0C8 100%);
+  border: 2px outset #FFFFFF;
+}
+
+.bookmarks-bar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #FFCCCC 0%, #FF9999 100%);
+}
+
+
+/* Bug Exorcist Button */
+.exorcist-button {
+  background: linear-gradient(180deg, #4B0082 0%, #2F004F 100%) !important;
+  color: white !important;
+  border-color: #8B0000 !important;
+  font-weight: bold;
+}
+
+.exorcist-button:hover {
+  background: linear-gradient(180deg, #6A0DAD 0%, #4B0082 100%) !important;
+  box-shadow: 0 0 8px rgba(139, 0, 0, 0.6);
+}
+
+
+/* Hell Mode Visual Enhancements */
+.zombie-browser.hell-mode-active {
+  animation: subtleShake 0.1s infinite;
+}
+
+@keyframes subtleShake {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-1px, 1px);
+  }
+  50% {
+    transform: translate(1px, -1px);
+  }
+  75% {
+    transform: translate(-1px, -1px);
+  }
+}
+
+.hell-mode-active .content-area {
+  filter: hue-rotate(5deg) saturate(1.2);
+}
+
+.hell-mode-active .title-bar {
+  background: linear-gradient(180deg, #CC0000 0%, #8B0000 50%, #660000 100%);
+  animation: titleBarPulse 2s infinite;
+}
+
+@keyframes titleBarPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(139, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+  }
+}
+
+
+/* Brief Shake Animation for Random Events */
+@keyframes briefShake {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-3px, 3px); }
+  20% { transform: translate(3px, -3px); }
+  30% { transform: translate(-3px, -3px); }
+  40% { transform: translate(3px, 3px); }
+  50% { transform: translate(0, 0); }
+}
+
+/* Polish: Improved Spacing and Alignment */
+.zombie-browser {
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* Better button hover states */
+.toolbar-button:hover,
+.bookmark-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth transitions */
+.toolbar-button,
+.bookmark-item,
+.menu-item,
+.dialog-button {
+  transition: all 0.15s ease;
+}
+
+/* Menu bar hover improvements */
+.menu-item {
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+/* Address bar polish */
+.address-input:focus {
+  outline: 2px solid #0054E3;
+  outline-offset: -2px;
+}
+
+/* Loading bar improvements */
+.loading-bar-fill {
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Status bar polish */
+.status-bar {
+  font-size: 11px;
+  min-height: 22px;
+}
+
+/* Content area scrollbar styling */
+.content-area::-webkit-scrollbar {
+  width: 16px;
+}
+
+.content-area::-webkit-scrollbar-track {
+  background: #D4D0C8;
+  border: 1px inset #808080;
+}
+
+.content-area::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ECE9D8 0%, #D4D0C8 100%);
+  border: 2px outset #FFFFFF;
+}
+
+.content-area::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #F5F5F5 0%, #E0E0E0 100%);
+}
+
+.content-area::-webkit-scrollbar-button {
+  height: 16px;
+  background: linear-gradient(180deg, #ECE9D8 0%, #D4D0C8 100%);
+  border: 2px outset #FFFFFF;
+}
+
+/* Popup dialog improvements */
+.retro-dialog {
+  font-size: 12px;
+}
+
+.dialog-message {
+  line-height: 1.6;
+}
+
+/* Bug Exorcist panel polish */
+.exorcist-panel {
+  font-size: 12px;
+}
+
+.bug-item {
+  transition: all 0.2s ease;
+}
+
+.bug-item:hover {
+  box-shadow: 0 2px 8px rgba(255, 0, 0, 0.3);
+}
+
+/* Retro page link improvements */
+.retro-page a {
+  transition: color 0.1s ease;
+}
+
+.retro-page a:active {
+  color: #CC0000;
+}
+
+/* Table styling improvements for retro pages */
+.retro-page table {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Marquee improvements */
+marquee {
+  display: block;
+  white-space: nowrap;
+}
+
+/* Ghost cursor trail fade improvements */
+.ghost-cursor.trail {
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+/* Hell mode title bar animation refinement */
+@keyframes titleBarPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(139, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.9), inset 0 0 10px rgba(255, 0, 0, 0.3);
+  }
+}
+
+/* Bookmarks bar scrollbar */
+.bookmarks-bar::-webkit-scrollbar-button {
+  width: 12px;
+  background: linear-gradient(180deg, #ECE9D8 0%, #D4D0C8 100%);
+  border: 1px outset #FFFFFF;
+}
+
+/* Improved focus states for accessibility */
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #0054E3;
+  outline-offset: 2px;
+}
+
+/* Exorcist button pulse animation */
+.exorcist-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.exorcist-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.exorcist-button:hover::after {
+  width: 200px;
+  height: 200px;
+}
+
+/* Compatibility toggle improvements */
+.compatibility-toggle {
+  user-select: none;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.compatibility-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.compatibility-toggle input[type="checkbox"] {
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+/* Hell mode label pulse */
+.hell-mode-label {
+  animation: hellLabelPulse 2s infinite;
+}
+
+@keyframes hellLabelPulse {
+  0%, 100% {
+    text-shadow: 0 0 2px rgba(139, 0, 0, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+  }
+}
+
+/* Improved popup stacking */
+.popup-container {
+  perspective: 1000px;
+}
+
+/* Dialog shadow improvements */
+.retro-dialog {
+  box-shadow: 
+    5px 5px 10px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+/* Loading bar shine animation */
+.loading-bar-shine {
+  animation: shineMove 1.5s ease-in-out infinite;
+}
+
+@keyframes shineMove {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+/* Mascot character animations refinement */
+.mascot-character.glow {
+  animation: mascotGlow 2s ease-in-out infinite;
+}
+
+.mascot-character.celebrate {
+  animation: mascotCelebrate 0.5s ease-in-out 3;
+}
+
+.mascot-character.bounce {
+  animation: mascotBounce 1s ease-in-out infinite;
+}
+
+.mascot-character.tilt {
+  animation: mascotTilt 0.5s ease-in-out infinite;
+}
+
+@keyframes mascotGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(138, 43, 226, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(138, 43, 226, 1));
+  }
+}
+
+@keyframes mascotCelebrate {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.2) rotate(-10deg);
+  }
+  75% {
+    transform: scale(1.2) rotate(10deg);
+  }
+}
+
+@keyframes mascotBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes mascotTilt {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-15deg);
+  }
+  75% {
+    transform: rotate(15deg);
+  }
+}
+
+/* Retro page improvements */
+.retro-page {
+  animation: pageLoad 0.3s ease-out;
+}
+
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Blank page improvements */
+.blank-page {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* Summon Button Styling */
+.summon-button {
+  background: linear-gradient(180deg, #4B0082 0%, #2F004F 100%) !important;
+  color: white !important;
+  border-color: #8B0000 !important;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+}
+
+.summon-button:hover:not(:disabled) {
+  background: linear-gradient(180deg, #6A0DAD 0%, #4B0082 100%) !important;
+  box-shadow: 0 0 12px rgba(138, 43, 226, 0.6);
+  animation: summonPulse 1s infinite;
+}
+
+@keyframes summonPulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(138, 43, 226, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(138, 43, 226, 0.8);
+  }
+}
+
+.summon-button::before {
+  content: '✨';
+  position: absolute;
+  left: -20px;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.summon-button:hover:not(:disabled)::before {
+  left: 5px;
+  opacity: 1;
+}
+
+/* Summoned Page Animations */
+.summoned-page {
+  animation: summonedPageAppear 0.8s ease-out;
+}
+
+@keyframes summonedPageAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) rotateX(10deg);
+    filter: blur(5px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.02) rotateX(-2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateX(0deg);
+    filter: blur(0);
+  }
+}
+
+.summoned-page table {
+  animation: tableRise 0.5s ease-out;
+}
+
+@keyframes tableRise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.summoned-page marquee {
+  animation: marqueeFlicker 0.3s ease-in-out 3;
+}
+
+@keyframes marqueeFlicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}

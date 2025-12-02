@@ -1,0 +1,13 @@
+{
+  "name": "Style Theme Guard",
+  "description": "Protects the Zombie IE6 horror-comedy aesthetic by checking style changes for theme consistency",
+  "trigger": {
+    "event": "file_saved",
+    "filePattern": "src/**/*.{css,scss,tsx,jsx}"
+  },
+  "action": {
+    "type": "agent_message",
+    "message": "🎨 CURSED STYLE THEME GUARD 🎨\n\nStyle changes detected. Ensure they align with Zombie IE6 horror-comedy theme:\n\n✓ Color Palette:\n  - IE6 blues (#0055CC, #3399FF) for chrome\n  - Windows XP grays (#ECE9D8, #D4D0C8) for toolbars\n  - Garish 2000s colors (lime green, hot pink, electric blue)\n  - Blood red (#8B0000) for horror accents\n  - Avoid modern, muted, professional palettes\n\n✓ Typography:\n  - Comic Sans MS, Papyrus, Impact for cursed text\n  - Arial, Verdana, Times New Roman for \"normal\" text\n  - NO modern fonts: Inter, Roboto, SF Pro, Helvetica Neue\n  - Pixelated fonts for retro digital displays\n\n✓ Visual Effects:\n  - CRT monitor glow and curvature\n  - Scanlines and screen glitches\n  - Ghost trails and floating sprites\n  - Blood drips and flicker animations\n  - All effects subtle enough to maintain usability\n\n✓ Retro Styling:\n  - Beveled 3D buttons with inset/outset borders\n  - Gradient backgrounds (linear, radial)\n  - Drop shadows (heavy, not subtle)\n  - Animated GIF support\n  - Table borders and cellpadding\n\n❌ FORBIDDEN:\n  - Flat, minimal design\n  - Smooth, professional aesthetics\n  - Modern CSS features used in obvious ways\n  - Clean, corporate color schemes\n\nIf styles drift from the cursed retro horror theme, suggest corrections based on zombie_ie_mode.md steering guide."
+  },
+  "enabled": true
+}

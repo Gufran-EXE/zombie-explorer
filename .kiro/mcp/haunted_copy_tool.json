@@ -1,0 +1,143 @@
+{
+  "name": "haunted_copy_generator",
+  "description": "Generates spooky, cursed microcopy for UI elements in the Zombie IE6 browser. Creates horror-themed text for buttons, tooltips, error messages, status updates, and popups while maintaining the early 2000s internet aesthetic.",
+  "version": "1.0.0",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "element_type": {
+        "type": "string",
+        "description": "Type of UI element needing copy",
+        "enum": ["button", "tooltip", "error_message", "status_bar", "popup_dialog", "loading_text", "menu_item", "link_text"]
+      },
+      "context": {
+        "type": "string",
+        "description": "What the element does or represents (e.g., 'save file', 'close window', 'network error')"
+      },
+      "tone": {
+        "type": "string",
+        "description": "Desired horror tone",
+        "enum": ["spooky", "cursed", "undead", "demonic", "paranormal"],
+        "default": "spooky"
+      },
+      "length": {
+        "type": "string",
+        "description": "Desired text length",
+        "enum": ["short", "medium", "long"],
+        "default": "short"
+      },
+      "count": {
+        "type": "number",
+        "description": "Number of variations to generate",
+        "default": 3,
+        "minimum": 1,
+        "maximum": 10
+      }
+    },
+    "required": ["element_type", "context"]
+  },
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "variations": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "description": "The haunted microcopy text"
+            },
+            "hex_code": {
+              "type": "string",
+              "description": "Optional fake error hex code (for error messages)"
+            },
+            "icon_suggestion": {
+              "type": "string",
+              "description": "Suggested retro icon or emoji"
+            }
+          }
+        },
+        "description": "Array of haunted copy variations"
+      },
+      "usage_notes": {
+        "type": "string",
+        "description": "Tips for using this copy effectively"
+      },
+      "retro_references": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Early 2000s internet/IE6 references included"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "element_type": "error_message",
+        "context": "page failed to load",
+        "tone": "cursed",
+        "length": "medium",
+        "count": 3
+      },
+      "output": {
+        "variations": [
+          {
+            "text": "A fatal exception 0xDEAD has occurred at 0028:C0FFEE in VXD ZOMBIE(01). The current application will be terminated.",
+            "hex_code": "0xDEAD",
+            "icon_suggestion": "💀"
+          },
+          {
+            "text": "The spirits reject your request. The page you seek dwells in the shadow realm. Error code: 666",
+            "hex_code": "0x029A",
+            "icon_suggestion": "👻"
+          },
+          {
+            "text": "Internet Explorer has encountered a cursed entity and needs to close. We are sorry for the inconvenience.",
+            "hex_code": "0xC0FFEE",
+            "icon_suggestion": "⚠️"
+          }
+        ],
+        "usage_notes": "Use in popup dialogs with retro Windows XP styling. Include OK button with spooky label.",
+        "retro_references": ["Windows XP error format", "Blue screen of death", "IE6 crash messages"]
+      }
+    },
+    {
+      "input": {
+        "element_type": "status_bar",
+        "context": "loading page content",
+        "tone": "undead",
+        "length": "short",
+        "count": 5
+      },
+      "output": {
+        "variations": [
+          {
+            "text": "Summoning page from the depths...",
+            "icon_suggestion": "⏳"
+          },
+          {
+            "text": "Exhuming content...",
+            "icon_suggestion": "⚰️"
+          },
+          {
+            "text": "Raising the dead...",
+            "icon_suggestion": "🧟"
+          },
+          {
+            "text": "Crawling from the grave...",
+            "icon_suggestion": "🪦"
+          },
+          {
+            "text": "Reanimating pixels...",
+            "icon_suggestion": "💀"
+          }
+        ],
+        "usage_notes": "Display in bottom status bar during page loads. Rotate through variations for variety.",
+        "retro_references": ["IE6 status bar messages", "Dial-up loading screens"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "name": "retro_css_generator",
+  "description": "Generates authentic early 2000s retro CSS styling for components and layouts. Produces table-based layouts, garish gradients, beveled borders, cursed fonts, and IE6-era visual patterns.",
+  "version": "1.0.0",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "component_type": {
+        "type": "string",
+        "description": "Type of component to style (e.g., 'button', 'toolbar', 'dialog', 'page_layout', 'sidebar')",
+        "enum": ["button", "toolbar", "dialog", "page_layout", "sidebar", "table", "form", "header", "footer", "navigation"]
+      },
+      "description": {
+        "type": "string",
+        "description": "Brief description of the component's purpose and desired aesthetic"
+      },
+      "color_scheme": {
+        "type": "string",
+        "description": "Preferred retro color scheme",
+        "enum": ["ie6_blue", "xp_gray", "garish_neon", "blood_horror", "geocities_rainbow"],
+        "default": "ie6_blue"
+      },
+      "cursed_level": {
+        "type": "string",
+        "description": "How aggressively retro/cursed the styling should be",
+        "enum": ["subtle", "moderate", "maximum_chaos"],
+        "default": "moderate"
+      }
+    },
+    "required": ["component_type", "description"]
+  },
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "css_code": {
+        "type": "string",
+        "description": "Complete CSS code with retro 2000s styling"
+      },
+      "html_structure": {
+        "type": "string",
+        "description": "Suggested HTML structure (table-based if applicable)"
+      },
+      "fonts": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "List of cursed fonts to use (Comic Sans, Papyrus, etc.)"
+      },
+      "effects": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Suggested visual effects (gradients, bevels, shadows)"
+      },
+      "notes": {
+        "type": "string",
+        "description": "Additional styling tips for authentic 2000s feel"
+      }
+    }
+  },
+  "examples": [
+    {
+      "input": {
+        "component_type": "button",
+        "description": "Navigation button for back/forward in browser toolbar",
+        "color_scheme": "xp_gray",
+        "cursed_level": "moderate"
+      },
+      "output": {
+        "css_code": ".retro-button { background: linear-gradient(180deg, #ECE9D8 0%, #D4D0C8 100%); border: 2px outset #FFFFFF; padding: 4px 12px; font-family: 'Tahoma', sans-serif; font-size: 11px; cursor: pointer; } .retro-button:active { border-style: inset; }",
+        "html_structure": "<button class=\"retro-button\">Back</button>",
+        "fonts": ["Tahoma", "Arial"],
+        "effects": ["beveled border", "gradient background", "inset on click"],
+        "notes": "Use outset border for 3D effect, inset when pressed. Keep text small and crisp."
+      }
+    }
+  ]
+}
